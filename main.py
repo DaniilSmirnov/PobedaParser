@@ -3,6 +3,7 @@ import datetime
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import re
+from loguru import logger
 
 origin = 'LED'
 
@@ -35,7 +36,7 @@ while str(search_date) != '2023-10-26':
         price = ''.join(price)
         price = int(price)
         if price < wanted_price:
-            print(url)
+            logger.info(str(price) + '   ' + url)
     driver.close()
 
     time.sleep(2)
