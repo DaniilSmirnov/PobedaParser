@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "pobedaparser"
+version = "0.1.0"
+description = ""
+authors = ["di.smirnov <di.smirnov@corp.vk.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "2.28.1"
+beautifulsoup4 = "4.11.2"
+selenium = "4.8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
