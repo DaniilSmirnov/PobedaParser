@@ -3,10 +3,14 @@ import datetime
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import re
+
 origin = 'LED'
 
 print('Destination IATA Code')
 destination = input()
+
+print('Wanted price')
+wanted_price = int(input())
 
 now_date = datetime.datetime.now() + datetime.timedelta(days=1)
 search_date = now_date.date()
@@ -30,7 +34,7 @@ while str(search_date) != '2023-10-26':
         price = re.findall('\d', price)
         price = ''.join(price)
         price = int(price)
-        if price < 10000:
+        if price < wanted_price:
             print(url)
     driver.close()
 
