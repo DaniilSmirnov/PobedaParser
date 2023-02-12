@@ -25,7 +25,7 @@ while str(search_date) != '2023-10-26':
     url = "https://ticket.pobeda.aero/websky/?origin-city-code%5B0%5D=" + origin + "&destination-city-code%5B0%5D=" + destination + "&date%5B0%5D=" + formated_date + "&segmentsCount=1&adultsCount=1&youngAdultsCount=0&childrenCount=0&infantsWithSeatCount=0&infantsWithoutSeatCount=0&lang=ru#/search"
 
     driver.get(url)
-    time.sleep(5)
+    time.sleep(2)
     htmlSource = driver.page_source
 
     soup = BeautifulSoup(htmlSource)
@@ -36,8 +36,7 @@ while str(search_date) != '2023-10-26':
         price = ''.join(price)
         price = int(price)
         if price < wanted_price:
-            logger.info(str(price) + '   ' + url)
+            logger.info(formated_date + '  ' + str(price))
+            logger.info(url)
     driver.close()
-
-    time.sleep(2)
 
